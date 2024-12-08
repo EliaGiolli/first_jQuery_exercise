@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+   <style>
+        body{
+            margin: 0;
+            padding:0;
+            min-height: 1200px;
+        }
+        .outerDiv{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            margin: 20px auto;
+            border-bottom: 2px dotted burlywood;
+            max-height: 500px;
+            width: 100%;
+        }
+
+        .innerDiv{
+            border-radius: 2px solid black;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            background-color: beige;
+        }
+
+        .button-style{
+            background-color: red;
+            color: antiquewhite;
+            padding: 15px;
+        }
+        .button-style:nth-child(2){
+            background-color:chartreuse;
+            color: black;
+            padding: 15px;
+        }
+        .button-style:nth-child(3){
+            background-color: chocolate;
+            color: antiquewhite;
+            padding: 15px;
+        }
+        .text-style{
+            font-size: large;
+            font-weight: 600;
+            color: green;
+            text-align: center;
+        }
+
+
+        .listDiv{
+            margin-top: 30px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        .button-list{
+            background-color:darkblue;
+            color: antiquewhite;
+            padding: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        #listItem{
+            color:cornflowerblue;
+            list-style: none;
+            font-size: 20px;
+            font-weight: 700;
+        }
+   </style>
+</head>
+<body>
+    <div class="outerDiv">
+        <div class="innerDiv">
+            <button id="button1" class="button-style">Show</button>
+            <button id="buttonTest" class="button-style">Try this out!</button>
+            <button id="button2" class="button-style">Hide</button>
+        </div>
+        
+        <p id="changingBtn" class="text-style">This text is being showed!</p>
+    </div>
+    
+    <div class="listDiv">
+        <button id="button-list" class="button-list">show list!</button>
+        <ul id="listItem">
+            <li>Element1</li>
+            <li>Element2</li>
+        </ul>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#button1').click(function(){
+            $('#changingBtn').show(1000);
+        });
+    
+        $('#button2').click(function(){
+            $('#changingBtn').hide(1000);
+        });
+
+        $('#button-list').click(function(){
+            $('#listItem').append('<li>New element</li>');
+        })
+
+        $('#buttonTest').click(function(){
+            $('#buttonTest').html('<input>Type anything </input>');
+        });
+    </script>    
+</body>
+</html>
